@@ -1,0 +1,850 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    
+}
+
+
+/* Horizontal Top Navigation Bar */
+nav.top-nav {
+    display: block; /* horizontal layout */
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav.top-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #1a46c7;
+    margin-right: 15px;
+    padding: 10px 20px;
+    border: 2px solid #1a46c7;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav.top-nav a:hover {
+    background-color: #1a46c7;
+    color: #fff;
+}
+
+/* HERO SECTION */
+header.hero {
+    background: url('image/background image.jpeg') no-repeat center/cover;
+    color: #fff;
+    padding: 140px 20px;
+    text-align: center;
+    position: relative;
+}
+
+header.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+}
+
+header.hero h1 {
+    position:relative;
+    z-index: 1;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+/* BOOK TRIP BUTTON */
+.booktrip-btn {
+    display:block;
+    position: relative;
+    margin: 2000px auto 0;
+    background: linear-gradient(135deg, #446dff, #1a46c7);
+    padding: 15px 15px;
+    border-radius: 1px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    margin-top: 10px;
+    
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+.booktrip-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* SECTION STYLING */
+.section {
+    max-width: 900px; /* keeps other sections limited */
+    margin: 50px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Section Headings */
+.section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #1a46c7;
+    font-weight: 700;
+}
+
+/* SERVICES GRID */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* exactly 2 cards per row */
+    gap: 25px;
+}
+
+/* POPULAR DESTINATIONS SECTION */
+#popular-destinations {
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.dest-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* exactly 3 cards per row */
+    gap: 25px;
+}
+
+.hotel-grid {
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+    justify-content: center;
+    .card {
+    flex: 1 1 calc(33.333% - 20px); /* 3 per row */
+    box-sizing: border-box;
+}
+}
+
+/* CARD DESIGN */
+.card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* BUTTONS INSIDE CARDS */
+.card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #446dff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #1a46c7;
+    transform: scale(1.05);
+}
+
+/* CATEGORY SECTION */
+.category-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.category-section h1 {
+    font-size: 36px;
+    color: #1a46c7;
+    margin: 0;
+}
+
+/* TESTIMONIALS */
+.testimonials .card {
+    border-left: 4px solid #1a46c7;
+}
+
+/* FOOTER */
+footer {
+    background: #1a46c7;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 768px) {
+    header.hero h1 {
+        font-size: 32px;
+    }
+
+    nav.top-nav {
+        text-align: center;
+    }
+
+    nav.top-nav a {
+        margin: 5px;
+    }
+
+    .services-grid,
+    .dest-grid,
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+}
+/* 1. SCROLL-TO-TOP BUTTON */
+#scrollToTopBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 25px;
+    right: 25px;
+    z-index: 99; 
+    border: none;
+    outline: none;
+    background-color: #1a46c7; 
+    color: white;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 50%; 
+    font-size: 24px;
+    line-height: 1; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #446dff;
+}
+
+
+/* 2. SCROLL REVEAL ANIMATIONS */
+
+/* Initial State: Hidden and slightly shifted down */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px); 
+    /* Add transition property to allow CSS to animate the change */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Final State: Fully visible and in place (JS adds this class) */
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*------------------------------ ABOUT US page css------------------ a
+/* General Page Styles */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #ffffff;
+}
+
+/* Horizontal Top Navigation Bar */
+nav {
+    display: block; /* ensure horizontal layout */
+    background-color: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block; /* horizontal layout */
+    text-decoration: none;
+    color: #233cdc;
+    margin-right: 15px;
+    padding: 10px 20px;
+    border: 2px solid #233cdc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #233cdc;
+    color: #fff;
+}
+
+/* About Us Section */
+/* Ensure full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* About Section */
+.about-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.about-container h1 {
+    font-size: 36px;
+    color: #233cdc;
+    margin-bottom: 10px;
+}
+
+.about-border {
+    width: 155px;
+    height: 3px;
+    background-color: #233cdc;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Reviews Section */
+.reviews-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.reviews-container h2 {
+    color: #233cdc;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: fit-content;
+    border-bottom: 2px solid #233cdc;
+    padding-bottom: 5px;
+}
+
+/* Review Boxes */
+.review-box {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #233cdc;
+    box-shadow: 0 2px 5px #233cdc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-box:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 15px #233cdc;
+}
+
+.reviewer {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #233cdc;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Footer always at bottom */
+footer {
+    background: #1a46c7;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    width: 100%;
+    margin-top: auto; /* This keeps footer at page bottom */
+}
+/* ------------------------------------contact us ka css--------------------------------------*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Horizontal Top Navigation Bar */
+nav.top-nav {
+    display: block;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav.top-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #1a46c7;
+    margin-right: 15px;
+    padding: 10px 20px;
+    border: 2px solid #1a46c7;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav.top-nav a:hover {
+    background-color: #1a46c7;
+    color: #fff;
+}
+
+/* HERO SECTION */
+header.hero {
+    background: url('image/background image.jpeg') no-repeat center/cover;
+    color: #fff;
+    padding: 140px 20px;
+    text-align: center;
+    position: relative;
+}
+
+header.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+}
+
+header.hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+/* SECTION STYLING */
+.section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Section Headings */
+.section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #1a46c7;
+    font-weight: 700;
+}
+
+/* CONTACT FORM STYLING */
+#contact-form form input,
+#contact-form form textarea {
+    width: 98%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#contact-form form input:focus,
+#contact-form form textarea:focus {
+    border-color: #446dff;
+    box-shadow: 0 0 8px rgba(68, 109, 255, 0.3);
+    outline: none;
+}
+
+.name-fields {
+    display: flex;
+    grid-template-columns: 4fr 4fr;
+    gap: 20px;
+}
+
+/* BUTTON */
+#contact-form form button {
+    background: linear-gradient(135deg, #446dff, #1a46c7);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+#contact-form form button:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #1a46c7, #446dff);
+}
+
+/* CONTACT INFO CARDS */
+#contact-info .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+#contact-info .card {
+    background: #ffeff7;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+#contact-info .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer {
+    background: #1a46c7;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 768px) {
+    #contact-info .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .name-fields {
+        grid-template-columns: 1fr;
+    }
+
+    header.hero h1 {
+        font-size: 32px;
+    }
+
+    nav.top-nav a {
+        margin: 5px;
+    }
+}
+
+
+
+/*--------------------bookk me ki css------------------*/
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Horizontal Top Navigation Bar */
+nav.top-nav {
+    display: block;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav.top-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #1a46c7;
+    margin-right: 15px;
+    padding: 10px 20px;
+    border: 2px solid #1a46c7;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav.top-nav a:hover {
+    background-color: #1a46c7;
+    color: #fff;
+}
+
+/* CATEGORY SECTION (For Main Titles) */
+.category-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.category-section h1 {
+    font-size: 36px;
+    color: #1a46c7;
+    margin: 0;
+}
+
+/* SECTION STYLING (For Hotel container) */
+.section {
+    max-width: 900px; 
+    margin: 50px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #1a46c7;
+    font-weight: 700;
+}
+
+/* --- BOOKING FORM & FIELDS STYLES (Vertical Stacked) --- */
+
+.booking-form-container {
+    max-width: 800px;       
+    width: 100%;            
+    margin: 50px auto 20px auto;
+    padding: 50px;          
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-sizing: border-box; /* Prevent sudden resize */
+}
+
+.booking-form-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #1a46c7;
+}
+
+.booking-form-container input[type="text"],
+.booking-form-container input[type="email"],
+.booking-form-container input[type="date"],
+.booking-form-container input[type="number"],
+.booking-form-container select {
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.booking-form-container input:focus,
+.booking-form-container select:focus {
+    border-color: #446dff;
+    outline: none;
+}
+
+/* --- Hotel Button --- */
+.hotel-block .select-btn {
+    display: block;
+    width: 90%; 
+    margin: 15px auto 0 auto; 
+    background-color: #446dff; 
+    color: white; 
+    padding: 10px 15px; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hotel-block .select-btn:hover {
+    background-color: #1a46c7; 
+    transform: translateY(-2px);
+}
+
+.hotel-block.selected .select-btn {
+    background-color: #008000; 
+    cursor: default;
+    font-size: 0.9em; 
+}
+
+.hotel-block.selected .select-btn::after {
+    content: " (Selected)"; 
+    font-weight: 400;
+    display: inline; 
+    margin-left: 5px; 
+}
+
+/* ===================================================
+   NEW: STYLES FOR HOTEL REMOVE SELECTION BUTTON
+   =================================================== */
+
+/* The removal button must be visible when the hotel is selected */
+.hotel-block.selected .remove-hotel-selection-btn {
+    /* Make the button look like a distinct action */
+    display: block !important; /* Override the inline style: display: none; */
+    width: 90%; 
+    margin: 10px auto 0 auto; 
+    
+    /* Style the button like a link for removal (Red is universally clear) */
+    background-color: transparent; 
+    border: 1px solid #cc0000; /* Subtle red border */
+    color: #cc0000; /* Standard red for removal/delete actions */
+    
+    padding: 8px 15px; 
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600; 
+    font-size: 0.9em;
+    text-align: center;
+    
+    /* Smooth transition for visual feedback */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for user feedback */
+.hotel-block.selected .remove-hotel-selection-btn:hover {
+    background-color: #ff4d4d; /* Bright red fill on hover */
+    color: white; /* White text on red background */
+    border-color: #ff4d4d;
+    transform: translateY(-1px); /* Subtle lift on hover */
+}
+
+/* Add an 'X' icon for clarity */
+.hotel-block.selected .remove-hotel-selection-btn::before {
+    content: "✖"; /* Unicode 'Multiplication X' symbol */
+    margin-right: 5px;
+    font-size: 0.8em;
+}
+
+/* Ensure the original Select button is hidden when selected, as you want the new button to replace it */
+.hotel-block.selected .select-btn {
+    display: none; 
+}
+
+/* 🔑 This is the retained, single copy of the Hotel Block Styling 🔑 */
+.hotel-block {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 220px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+.hotel-block:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hotel-block h3 { margin: 10px 0 5px 0; }
+.hotel-block p { margin: 5px 0; color: #555; }
+
+.hotel-blocks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-box {
+    margin: 15px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    max-width: 500px; 
+    box-sizing: border-box;
+}
+
+.final-price {
+    border: 3px solid #446dff;
+    background-color: #e6f0ff;
+    font-size: 1.5em;
+    color: #1a46c7;
+}
+
+.booktrip-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 500px;
+    background: linear-gradient(135deg, #446dff, #1a46c7);
+    padding: 15px 35px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.booktrip-btn:hover { transform: translateY(-3px); }
+
+footer {
+    background: #1a46c7;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .hotel-blocks-grid {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px;
+    }
+    .hotel-block {
+        width: 90%; 
+    }
+    .booktrip-btn, .info-box {
+        width: 90% !important;
+    }
+    .booking-form-container {
+        margin: 30px 15px;
+        padding: 30px 20px;
+    }
+}
