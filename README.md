@@ -1,2 +1,20 @@
-# Global-Travelers
-The Global Traveler is a front‑end travel booking website developed as my first project. It provides a simple and engaging interface for users to explore destinations, book trips, and learn about international travel packages.
+# Global Travelers – Travel Agency Website
+
+This is a simple front-end web layout created as a first semester academic project.
+
+## Features
+- Travel destination sections
+- Clean UI layout
+- Responsive structure (basic)
+- Image-based destination cards
+
+## Technologies Used
+- HTML
+- CSS
+- VS Code
+
+## Live Demo
+https://saad-tech02.github.io/Global-Travelers/
+
+## Author
+M Saad
